@@ -1,0 +1,8 @@
+language: c
+services:
+	- docker
+before_install:
+	- docker pull mdipenta/myimages:ci-image
+	- docker ps -a
+
+script: docker run mdipenta/myimages:ci-image make
